@@ -2,7 +2,6 @@
 from collections import deque
 from inspect import signature
 from itertools import islice
-from math import sqrt
 
 
 # Curried function decorator.
@@ -65,15 +64,3 @@ class Composable():
             val = f(val)
 
         return val
-
-pointfree = Composable
-
-
-@pointfree
-def foo(bar):
-    return bar + 5
-
-f = foo * ord * str.capitalize
-print(f('a'))
-g = foo * sqrt
-print(g(4))
